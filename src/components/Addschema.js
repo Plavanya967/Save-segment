@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import axios from 'axios';
+
 
 const schema={
     
@@ -21,16 +21,16 @@ export default function FormExample() {
   const{ firstname,lastname,age,accountname,city,state}= formValue;
   const handleSubmit = async(event) => { 
       event.preventDefault();   
-    if(firstname&& lastname && age&& accountname&& city &&state){
-        const updatedData={...formValue}
-        const response= await axios.post("https://localhost:5000/segment", updatedData)
-        if(response.status === 201){
-            alert ('Updated successfully');
-        }
-        else{
-            alert('Something went wrong');
-        }
-        setFormValue({firstname:"",lastname:"",age:"",accountname:"",city:"",state:""});
+//     if(firstname&& lastname && age&& accountname&& city &&state){
+//         const updatedData={...formValue}
+//         const response= await axios.post("https://localhost:5000/segment", updatedData)
+//         if(response.status === 201){
+//             alert ('Updated successfully');
+//         }
+//         else{
+//             alert('Something went wrong');
+//         }
+//         setFormValue({firstname:"",lastname:"",age:"",accountname:"",city:"",state:""});
     }
  
     setValidated(true);
